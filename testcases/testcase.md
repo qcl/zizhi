@@ -1,5 +1,4 @@
 # Test Case Name
-----
 Description of this test case.
 
 ## Given something
