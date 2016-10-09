@@ -3,10 +3,178 @@
 # parser.py
 
 import re
+import json
 import argparse
 
+# TODO: need be able to be extended
+zizhi_actions = [
+            "tap",
+            "type",
+            "verify"
+        ]
+
+# TODO: move out to another file
+# TODO: consider multiple platforms
+# TODO: need be able to be extended
+zizhi_element_types = [
+            "tab bar",
+            "navigation bar",
+            "action sheet",
+            "activity indicator",
+            "alert view",
+            "button",
+            "image",
+            "link",
+            "page indicator",
+            "picker",
+            "picker wheel",
+            "popover",
+            "progress indicator",
+            "scroll view",
+            "search bar",
+            "secure text field",
+            "segment control",
+            "slider",
+            "status bar",
+            "table view",
+            "text field",
+            "text view",
+            "toolbar",
+            "web view",
+            "window",
+            "collection view"
+        ]
+
+# TODO: need be able to be extended
+zizhi_preps = [
+            "in",
+            "on"
+        ]
+
+# Step tokens
+#   Action
+#       tap, type, verify...etc.
+#   Identifier
+#       **identifier**
+#   Type
+#       button, link...etc.
+#   String
+#       "this is a string"
+#   Prep
+#       in, on...etc
+
+def tokenize_step(content):
+    identifier_regex = r"\*{2}(?P<identifier>[\W\d ]+|[\w\d ]+)\*{2}"
+    string_regex = r"\"(?P<string>.*)\""
+
+    strings = []
+    identifiers = []
+    types = []
+    preps = []
+
+    # replace string first.
+    string_matches = re.finditer(string_regex, content)
+    for matchNum, match in enumerate(string_matches):
+        strings.append(match.group("string"))
+    if len(strings) > 0:
+        content = re.sub(string_regex, " __str__ ", content, 0)
+
+    content = content.lower()
+
+    # handle identifier
+    identifier_matches = re.finditer(identifier_regex, content)
+    for matchNum, match in enumerate(identifier_matches):
+        identifiers.append(match.group("identifier"))
+    if len(identifiers) > 0:
+        content = re.sub(identifier_regex, " __identifier__ ", content, 0)
+
+    # FIXME & TODO initialize it only once
+    element_type_state = {}
+    for element_type in zizhi_element_types:
+        current_state = element_type_state
+        element_type_words = element_type.split()
+        for element_type_word in element_type_words:
+            if not element_type_word in current_state:
+                current_state[element_type_word] = {}
+            current_state = current_state[element_type_word]
+        if not "__type__" in current_state:
+            current_state["__type__"] = element_type
+        else:
+            print "Shouldn't print this line"
+
+    tokens = []
+
+    content = content.replace("."," ").replace(","," ")
+    content_words = content.split()
+    content_words.append("__eol__")
+
+    current_state = element_type_state
+    possible_type = None
+
+    for word in content_words:
+        if word not in current_state and possible_type is not None:
+            token = {
+                        "type": "type",
+                        "content": possible_type
+                    }
+            tokens.append(token)
+            possible_type = None
+            current_state = element_type_state
+        elif word in element_type_state:
+            current_state = element_type_state
+
+        if word in zizhi_actions:
+            token = {
+                        "type": "action",
+                        "content": word
+                    }
+            tokens.append(token)
+            continue
+
+        elif word in zizhi_preps:
+            token = {
+                        "type": "prep",
+                        "content": word
+                    }
+            tokens.append(token)
+            continue
+
+        elif word == "__str__":
+            token = {
+                        "type": "string",
+                        "content": strings.pop(0)
+                    }
+            tokens.append(token)
+            continue
+
+        elif word == "__identifier__":
+            token = {
+                        "type": "identifier",
+                        "content": identifiers.pop(0)
+                    }
+            tokens.append(token)
+            continue
+
+        elif word in current_state:
+            current_state = current_state[word]
+            if "__type__" in current_state:
+                possible_type = current_state["__type__"]
+        else:
+            current_state = element_type_state
+
+    if len(tokens) > 0:
+        return tokens
+
+# Line types
+#   Title
+#       Start with # or ##, # means it is title for test case, ## is for section.
+#   Description
+#       Description for test case or section.
+#   Step
+#       Start with num. , it describes behavior
+
 # NOTE: syntax now let line is independent with each other line
-def tokenliz_line(line, line_number = None):
+def tokenize_line(line, line_number = None):
     # line_number will be use to show debug message, if I have time to do that.
     #print line_number, line
     line = line.strip()
@@ -67,7 +235,7 @@ def parse_testcase_file(filename):
     line_number = 0
     for line in testcase_file:
         line_number += 1
-        line_result = tokenliz_line(line, line_number)
+        line_result = tokenize_line(line, line_number)
         if line_result:
             line_results.append(line_result)
 
@@ -120,8 +288,11 @@ def parse_testcase_file(filename):
                 testcase["description"] += "%s\n" % (line_result["content"])
 
         elif line_type == "step":
-            # TODO - parse actions in step
-            pass
+            #print line_result["content"]
+            step_tokens = tokenize_step(line_result["content"])
+            if step_tokens:
+                # TODO - parse actions in step
+                pass
 
     print testcase
 
