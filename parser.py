@@ -106,7 +106,7 @@ def tokenize_step(content):
 
     content = content.replace("."," ").replace(","," ")
     content_words = content.split()
-    content_words.append("__eol__")
+    content_words.append("__eol__") # FIXME: work around for handling last word
 
     current_state = element_type_state
     possible_type = None
@@ -290,10 +290,94 @@ def parse_testcase_file(filename):
         elif line_type == "step":
             #print line_result["content"]
             step_tokens = tokenize_step(line_result["content"])
-            if step_tokens:
-                # TODO - parse actions in step
-                pass
+            action = {
+                        "action": None,
+                        "string": None,
+                        "matcher": None
+                    }
+            matcher = {
+                        "type": None,
+                        "identifier": None,
+                        "parent": None
+                    }
+            action["matcher"] = matcher
 
+            for token in step_tokens:
+                token_type = token["type"]
+                token_content = token["content"]
+
+                if token_type == "action":
+                    if action["action"] is None:
+                        action["action"] = token_content
+                    else:
+                        # TODO: handle error
+                        pass
+
+                elif token_type == "string":
+                    if action["string"] is None:
+                        action["string"] = token_content
+                    else:
+                        # TODO: handle error
+                        pass
+
+                elif token_type == "prep":
+                    # need a new matcher
+                    if matcher["parent"] is None:
+                        previous_matcher = matcher
+                        matcher = {
+                                    "type": None,
+                                    "identifier": None,
+                                    "parent": None
+                                }
+                        previous_matcher["parent"] = matcher
+                    else:
+                        # TODO: handle error
+                        pass
+
+                elif token_type == "type":
+                    if matcher["type"] is None:
+                        matcher["type"] = token_content
+                    else:
+                        # TODO: handle error
+                        pass
+
+                elif token_type == "identifier":
+                    if matcher["identifier"] is None:
+                        matcher["identifier"] = token_content
+                    else:
+                        # TODO: handle error
+                        pass
+
+            # verify action
+            verified = False
+            if action["action"] is not None and action["matcher"] is not None:
+                matcher = action["matcher"]
+                if matcher["type"] is not None or matcher["identifier"] is not None:
+                    verified = True
+                elif action["string"] is not None:
+                    verified = True
+                    action["matcher"] = None
+
+            #print verified
+            # TODO: fix some possible error
+            if verified and action["matcher"] is not None:
+                #print action["matcher"]
+                matcher = action["matcher"]
+                parent_matcher = matcher["parent"]
+                while parent_matcher is not None:
+                    if parent_matcher["type"] is not None or parent_matcher["identifier"] is not None:
+                        matcher = parent_matcher;
+                        parent_matcher = matcher["parent"]
+                    else:
+                        matcher["parent"] = parent_matcher["parent"]
+                        parent_matcher = matcher["parent"]
+                #print action["matcher"]
+
+            #print action
+            if verified:
+                current_section["actions"].append(action)
+
+    # TODO: use json to output it.
     print testcase
 
 if __name__ == '__main__':

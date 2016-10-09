@@ -11,6 +11,7 @@ Description of this section, I think it's optional. Zizhi only care about the sp
 
 1. Tap button **A** in navigation bar.
 2. Type "Some string".
+3. Tap button **b** in on collection view **C**
 
 ## Then something should happend
 
