@@ -3,6 +3,7 @@
 # parser.py
 
 import re
+import os
 import json
 import argparse
 
@@ -224,10 +225,12 @@ def tokenize_line(line, line_number = None):
         pass
 
 
-def parse_testcase_file(filename):
-    print 'Parse',filename
+def parse_testcase_file(filepath):
+    print 'Parse',filepath
+    dirname, filename = os.path.split(filepath)
+    print dirname,filename
 
-    testcase_file = open(filename, 'r')
+    testcase_file = open(os.path.join(dirname, filename), 'r')
 
     line_results = []
 
@@ -377,8 +380,17 @@ def parse_testcase_file(filename):
             if verified:
                 current_section["actions"].append(action)
 
-    # TODO: use json to output it.
+    # TODO: move write file part out of this method
     print testcase
+
+    filename_without_ext, ext = os.path.splitext(filename)
+    middle_format_filename = "%s.zz" % (filename_without_ext)
+    middle_format_filepath = os.path.join(dirname, middle_format_filename)
+
+    print "wirte to", middle_format_filepath
+    output = open(middle_format_filepath, "w")
+    json.dump(testcase, output)
+    output.close()
 
 if __name__ == '__main__':
     argp = argparse.ArgumentParser(description='Zizhi\'s parser')
