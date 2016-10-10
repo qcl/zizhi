@@ -7,44 +7,14 @@ import os
 import json
 import argparse
 
-# TODO: need be able to be extended
-zizhi_actions = [
-            "tap",
-            "type",
-            "verify"
-        ]
+import zizhi
 
-# TODO: move out to another file
+# TODO: need be able to be extended
+zizhi_actions = zizhi.actions
+
 # TODO: consider multiple platforms
 # TODO: need be able to be extended
-zizhi_element_types = [
-            "tab bar",
-            "navigation bar",
-            "action sheet",
-            "activity indicator",
-            "alert view",
-            "button",
-            "image",
-            "link",
-            "page indicator",
-            "picker",
-            "picker wheel",
-            "popover",
-            "progress indicator",
-            "scroll view",
-            "search bar",
-            "secure text field",
-            "segment control",
-            "slider",
-            "status bar",
-            "table view",
-            "text field",
-            "text view",
-            "toolbar",
-            "web view",
-            "window",
-            "collection view"
-        ]
+zizhi_element_types = zizhi.elementTypes 
 
 # TODO: need be able to be extended
 zizhi_preps = [
