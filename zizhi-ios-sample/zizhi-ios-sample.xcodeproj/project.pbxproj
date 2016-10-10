@@ -18,6 +18,7 @@
 		7CFEB0C31DAB271400C3692A /* HelloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFEB0C11DAB271400C3692A /* HelloViewController.xib */; };
 		7CFEB0CB1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */; };
 		7CFEB0D31DAB459800C3692A /* zizhi_ios_sampleUITestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */; };
+		7CFEB0D71DABCB0F00C3692A /* Zizhi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0D61DABCB0E00C3692A /* Zizhi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		7CFEB0CC1DAB35AD00C3692A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zizhi_ios_sampleUITestBase.m; sourceTree = "<group>"; };
 		7CFEB0D41DAB48BA00C3692A /* zizhi_ios_sampleUITestBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zizhi_ios_sampleUITestBase.h; sourceTree = "<group>"; };
+		7CFEB0D51DABCB0E00C3692A /* Zizhi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zizhi.h; sourceTree = "<group>"; };
+		7CFEB0D61DABCB0E00C3692A /* Zizhi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zizhi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				7CFEB0CC1DAB35AD00C3692A /* Info.plist */,
 				7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */,
 				7CFEB0D41DAB48BA00C3692A /* zizhi_ios_sampleUITestBase.h */,
+				7CFEB0D51DABCB0E00C3692A /* Zizhi.h */,
+				7CFEB0D61DABCB0E00C3692A /* Zizhi.m */,
 			);
 			path = "zizhi-ios-sampleUITests";
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CFEB0D71DABCB0F00C3692A /* Zizhi.m in Sources */,
 				7CFEB0CB1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m in Sources */,
 				7CFEB0D31DAB459800C3692A /* zizhi_ios_sampleUITestBase.m in Sources */,
 			);
