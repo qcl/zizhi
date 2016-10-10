@@ -16,7 +16,19 @@
 		7C5EE9811DAB21D0001FED8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5EE97F1DAB21D0001FED8C /* LaunchScreen.storyboard */; };
 		7CFEB0C21DAB271400C3692A /* HelloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0C01DAB271400C3692A /* HelloViewController.m */; };
 		7CFEB0C31DAB271400C3692A /* HelloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFEB0C11DAB271400C3692A /* HelloViewController.xib */; };
+		7CFEB0CB1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */; };
+		7CFEB0D31DAB459800C3692A /* zizhi_ios_sampleUITestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CFEB0CD1DAB35AD00C3692A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C5EE9631DAB21D0001FED8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C5EE96A1DAB21D0001FED8C;
+			remoteInfo = "zizhi-ios-sample";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7C5EE96B1DAB21D0001FED8C /* zizhi-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zizhi-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,10 +46,22 @@
 		7CFEB0BF1DAB271400C3692A /* HelloViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloViewController.h; sourceTree = "<group>"; };
 		7CFEB0C01DAB271400C3692A /* HelloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloViewController.m; sourceTree = "<group>"; };
 		7CFEB0C11DAB271400C3692A /* HelloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelloViewController.xib; sourceTree = "<group>"; };
+		7CFEB0C81DAB35AD00C3692A /* zizhi-ios-sampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zizhi-ios-sampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zizhi_ios_sampleUITests.m; sourceTree = "<group>"; };
+		7CFEB0CC1DAB35AD00C3692A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zizhi_ios_sampleUITestBase.m; sourceTree = "<group>"; };
+		7CFEB0D41DAB48BA00C3692A /* zizhi_ios_sampleUITestBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zizhi_ios_sampleUITestBase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7C5EE9681DAB21D0001FED8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CFEB0C51DAB35AD00C3692A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				7C5EE96D1DAB21D0001FED8C /* zizhi-ios-sample */,
+				7CFEB0C91DAB35AD00C3692A /* zizhi-ios-sampleUITests */,
 				7C5EE96C1DAB21D0001FED8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				7C5EE96B1DAB21D0001FED8C /* zizhi-ios-sample.app */,
+				7CFEB0C81DAB35AD00C3692A /* zizhi-ios-sampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +118,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7CFEB0C91DAB35AD00C3692A /* zizhi-ios-sampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */,
+				7CFEB0CC1DAB35AD00C3692A /* Info.plist */,
+				7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */,
+				7CFEB0D41DAB48BA00C3692A /* zizhi_ios_sampleUITestBase.h */,
+			);
+			path = "zizhi-ios-sampleUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,6 +149,24 @@
 			productReference = 7C5EE96B1DAB21D0001FED8C /* zizhi-ios-sample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7CFEB0C71DAB35AD00C3692A /* zizhi-ios-sampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CFEB0CF1DAB35AD00C3692A /* Build configuration list for PBXNativeTarget "zizhi-ios-sampleUITests" */;
+			buildPhases = (
+				7CFEB0C41DAB35AD00C3692A /* Sources */,
+				7CFEB0C51DAB35AD00C3692A /* Frameworks */,
+				7CFEB0C61DAB35AD00C3692A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CFEB0CE1DAB35AD00C3692A /* PBXTargetDependency */,
+			);
+			name = "zizhi-ios-sampleUITests";
+			productName = "zizhi-ios-sampleUITests";
+			productReference = 7CFEB0C81DAB35AD00C3692A /* zizhi-ios-sampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -123,6 +178,10 @@
 				TargetAttributes = {
 					7C5EE96A1DAB21D0001FED8C = {
 						CreatedOnToolsVersion = 7.3;
+					};
+					7CFEB0C71DAB35AD00C3692A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7C5EE96A1DAB21D0001FED8C;
 					};
 				};
 			};
@@ -140,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				7C5EE96A1DAB21D0001FED8C /* zizhi-ios-sample */,
+				7CFEB0C71DAB35AD00C3692A /* zizhi-ios-sampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -153,6 +213,13 @@
 				7C5EE97E1DAB21D0001FED8C /* Assets.xcassets in Resources */,
 				7C5EE97C1DAB21D0001FED8C /* Main.storyboard in Resources */,
 				7CFEB0C31DAB271400C3692A /* HelloViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CFEB0C61DAB35AD00C3692A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +238,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CFEB0C41DAB35AD00C3692A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CFEB0CB1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m in Sources */,
+				7CFEB0D31DAB459800C3692A /* zizhi_ios_sampleUITestBase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CFEB0CE1DAB35AD00C3692A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C5EE96A1DAB21D0001FED8C /* zizhi-ios-sample */;
+			targetProxy = 7CFEB0CD1DAB35AD00C3692A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7C5EE97A1DAB21D0001FED8C /* Main.storyboard */ = {
@@ -299,6 +383,28 @@
 			};
 			name = Release;
 		};
+		7CFEB0D01DAB35AD00C3692A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "zizhi-ios-sampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.qcl.ios.zizhi-ios-sampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "zizhi-ios-sample";
+			};
+			name = Debug;
+		};
+		7CFEB0D11DAB35AD00C3692A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "zizhi-ios-sampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.qcl.ios.zizhi-ios-sampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "zizhi-ios-sample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +425,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7CFEB0CF1DAB35AD00C3692A /* Build configuration list for PBXNativeTarget "zizhi-ios-sampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CFEB0D01DAB35AD00C3692A /* Debug */,
+				7CFEB0D11DAB35AD00C3692A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
