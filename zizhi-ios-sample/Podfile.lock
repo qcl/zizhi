@@ -20,13 +20,20 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Zizhi (0.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - Zizhi (from `./`)
+
+EXTERNAL SOURCES:
+  Zizhi:
+    :path: "./"
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Zizhi: 120b8ce1a3bcdc00afa8966ce1aa3ec462e6041f
 
-PODFILE CHECKSUM: 2428ceedf18a710398823686bdb7d3e2c0123b94
+PODFILE CHECKSUM: c0bd67c460c35039e9c0c524f3868289a9ba3c35
 
 COCOAPODS: 1.0.1

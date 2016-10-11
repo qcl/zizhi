@@ -7,8 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <Zizhi/Zizhi.h>
+
 #import "zizhi_ios_sampleUITestBase.h"
-#import "Zizhi.h"
 
 @interface zizhi_ios_sampleUITests : zizhi_ios_sampleUITestBase
 
@@ -50,12 +51,12 @@
     [app.buttons[@"Hello"] tap];
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-    ZizhiMatcher *zzm1 = [[ZizhiMatcher alloc] initWithElementType:XCUIElementTypeWindow];
-    ZizhiMatcher *zzm = [[ZizhiMatcher alloc] initWithIdentifier:@"Hello" elementType:XCUIElementTypeButton];
+    ZZMatcher *zzm1 = [[ZZMatcher alloc] initWithElementType:XCUIElementTypeWindow];
+    ZZMatcher *zzm = [[ZZMatcher alloc] initWithIdentifier:@"Hello" elementType:XCUIElementTypeButton];
     zzm.ancestor = zzm1;
     XCUIElement *element = [Zizhi findElementByZizhiMatcher:zzm];
     [element tap];
-    
+//
     XCTAssertNotNil(app.staticTexts[@"Hello world"]);
 }
 

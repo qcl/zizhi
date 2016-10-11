@@ -3,4 +3,10 @@ use_frameworks!
 
 target 'zizhi-ios-sample' do
   pod 'AFNetworking', '~> 2.6'
+
+  target 'zizhi-ios-sampleUITests' do
+    inherit! :search_paths
+    pod 'Zizhi', :path => './'
+  end
 end
+
