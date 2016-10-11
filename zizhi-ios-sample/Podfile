@@ -1,0 +1,6 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'zizhi-ios-sample' do
+  pod 'AFNetworking', '~> 2.6'
+end

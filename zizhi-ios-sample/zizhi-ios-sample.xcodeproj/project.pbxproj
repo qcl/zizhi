@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03360B13C30EE8B730FCD83C /* Pods_zizhi_ios_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B25D324DE37FBB16BE85E8 /* Pods_zizhi_ios_sample.framework */; };
 		7C5EE9701DAB21D0001FED8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5EE96F1DAB21D0001FED8C /* main.m */; };
 		7C5EE9731DAB21D0001FED8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5EE9721DAB21D0001FED8C /* AppDelegate.m */; };
 		7C5EE9761DAB21D0001FED8C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5EE9751DAB21D0001FED8C /* FirstViewController.m */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70B25D324DE37FBB16BE85E8 /* Pods_zizhi_ios_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zizhi_ios_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5EE96B1DAB21D0001FED8C /* zizhi-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zizhi-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5EE96F1DAB21D0001FED8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C5EE9711DAB21D0001FED8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 		7CFEB0D41DAB48BA00C3692A /* zizhi_ios_sampleUITestBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zizhi_ios_sampleUITestBase.h; sourceTree = "<group>"; };
 		7CFEB0D51DABCB0E00C3692A /* Zizhi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zizhi.h; sourceTree = "<group>"; };
 		7CFEB0D61DABCB0E00C3692A /* Zizhi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zizhi.m; sourceTree = "<group>"; };
+		9464F4EA1BE753C013EA7D25 /* Pods-zizhi-ios-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zizhi-ios-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-zizhi-ios-sample/Pods-zizhi-ios-sample.release.xcconfig"; sourceTree = "<group>"; };
+		A6E4AD9C8525292678CA0325 /* Pods-zizhi-ios-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zizhi-ios-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zizhi-ios-sample/Pods-zizhi-ios-sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03360B13C30EE8B730FCD83C /* Pods_zizhi_ios_sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,8 @@
 				7C5EE96D1DAB21D0001FED8C /* zizhi-ios-sample */,
 				7CFEB0C91DAB35AD00C3692A /* zizhi-ios-sampleUITests */,
 				7C5EE96C1DAB21D0001FED8C /* Products */,
+				B38B91A79FF75806FFB9E7E4 /* Pods */,
+				D26099EC14AED2A4457932F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +141,23 @@
 			path = "zizhi-ios-sampleUITests";
 			sourceTree = "<group>";
 		};
+		B38B91A79FF75806FFB9E7E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6E4AD9C8525292678CA0325 /* Pods-zizhi-ios-sample.debug.xcconfig */,
+				9464F4EA1BE753C013EA7D25 /* Pods-zizhi-ios-sample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D26099EC14AED2A4457932F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70B25D324DE37FBB16BE85E8 /* Pods_zizhi_ios_sample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C5EE9851DAB21D0001FED8C /* Build configuration list for PBXNativeTarget "zizhi-ios-sample" */;
 			buildPhases = (
+				2F4ACB8AE3FA7F26B8B675DD /* [CP] Check Pods Manifest.lock */,
 				7C5EE9671DAB21D0001FED8C /* Sources */,
 				7C5EE9681DAB21D0001FED8C /* Frameworks */,
 				7C5EE9691DAB21D0001FED8C /* Resources */,
+				F2BAB0B27CE330DEA24CEBDB /* [CP] Embed Pods Frameworks */,
+				A1D3FAAF56C27EF7D466D9CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,6 +256,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F4ACB8AE3FA7F26B8B675DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A1D3FAAF56C27EF7D466D9CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zizhi-ios-sample/Pods-zizhi-ios-sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2BAB0B27CE330DEA24CEBDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zizhi-ios-sample/Pods-zizhi-ios-sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7C5EE9671DAB21D0001FED8C /* Sources */ = {
@@ -369,6 +444,7 @@
 		};
 		7C5EE9861DAB21D0001FED8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6E4AD9C8525292678CA0325 /* Pods-zizhi-ios-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/zizhi-ios-sample/Info.plist";
@@ -380,6 +456,7 @@
 		};
 		7C5EE9871DAB21D0001FED8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9464F4EA1BE753C013EA7D25 /* Pods-zizhi-ios-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/zizhi-ios-sample/Info.plist";
@@ -439,6 +516,7 @@
 				7CFEB0D11DAB35AD00C3692A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
