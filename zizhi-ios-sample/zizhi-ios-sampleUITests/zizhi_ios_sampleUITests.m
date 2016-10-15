@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <Zizhi/Zizhi.h>
+#import "Zizhi.h"
 
 #import "zizhi_ios_sampleUITestBase.h"
 

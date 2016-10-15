@@ -15,6 +15,8 @@
 		7C5EE97C1DAB21D0001FED8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5EE97A1DAB21D0001FED8C /* Main.storyboard */; };
 		7C5EE97E1DAB21D0001FED8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C5EE97D1DAB21D0001FED8C /* Assets.xcassets */; };
 		7C5EE9811DAB21D0001FED8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5EE97F1DAB21D0001FED8C /* LaunchScreen.storyboard */; };
+		7CE24FD91DB283EC0010672F /* Zizhi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE24FD61DB283EC0010672F /* Zizhi.m */; };
+		7CE24FDA1DB283EC0010672F /* ZZMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE24FD81DB283EC0010672F /* ZZMatcher.m */; };
 		7CFEB0C21DAB271400C3692A /* HelloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0C01DAB271400C3692A /* HelloViewController.m */; };
 		7CFEB0C31DAB271400C3692A /* HelloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFEB0C11DAB271400C3692A /* HelloViewController.xib */; };
 		7CFEB0CB1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */; };
@@ -45,6 +47,10 @@
 		7C5EE97D1DAB21D0001FED8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C5EE9801DAB21D0001FED8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C5EE9821DAB21D0001FED8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CE24FD51DB283EC0010672F /* Zizhi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zizhi.h; sourceTree = "<group>"; };
+		7CE24FD61DB283EC0010672F /* Zizhi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zizhi.m; sourceTree = "<group>"; };
+		7CE24FD71DB283EC0010672F /* ZZMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMatcher.h; sourceTree = "<group>"; };
+		7CE24FD81DB283EC0010672F /* ZZMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMatcher.m; sourceTree = "<group>"; };
 		7CFEB0BF1DAB271400C3692A /* HelloViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloViewController.h; sourceTree = "<group>"; };
 		7CFEB0C01DAB271400C3692A /* HelloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloViewController.m; sourceTree = "<group>"; };
 		7CFEB0C11DAB271400C3692A /* HelloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelloViewController.xib; sourceTree = "<group>"; };
@@ -126,9 +132,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7CE24FD41DB283C70010672F /* Zizhi */ = {
+			isa = PBXGroup;
+			children = (
+				7CE24FD51DB283EC0010672F /* Zizhi.h */,
+				7CE24FD61DB283EC0010672F /* Zizhi.m */,
+				7CE24FD71DB283EC0010672F /* ZZMatcher.h */,
+				7CE24FD81DB283EC0010672F /* ZZMatcher.m */,
+			);
+			path = Zizhi;
+			sourceTree = "<group>";
+		};
 		7CFEB0C91DAB35AD00C3692A /* zizhi-ios-sampleUITests */ = {
 			isa = PBXGroup;
 			children = (
+				7CE24FD41DB283C70010672F /* Zizhi */,
 				7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */,
 				7CFEB0CC1DAB35AD00C3692A /* Info.plist */,
 				7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */,
@@ -319,7 +337,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE24FD91DB283EC0010672F /* Zizhi.m in Sources */,
 				7CFEB0CB1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m in Sources */,
+				7CE24FDA1DB283EC0010672F /* ZZMatcher.m in Sources */,
 				7CFEB0D31DAB459800C3692A /* zizhi_ios_sampleUITestBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
