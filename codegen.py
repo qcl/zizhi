@@ -82,7 +82,7 @@ def gen_objc_testcode_matcher(matcher, variables):
     if len(lines) > 0:
         current_matcher_var_name = get_current_use_variable_name_with_prefix(zzmatcher_prefix, variables)
         target_element_var_name = get_variable_name_with_prefiex('targetElement', variables)
-        queyr_code = 'XCUIElement *%s = [Zizhi findElementByZizheMatcher:%s];' % (target_element_var_name, current_matcher_var_name);
+        queyr_code = 'XCUIElement *%s = [Zizhi findElementByZizhiMatcher:%s];' % (target_element_var_name, current_matcher_var_name);
         lines.append(queyr_code)
         #print queyr_code
         #print lines
