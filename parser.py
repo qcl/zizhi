@@ -50,14 +50,14 @@ def tokenize_step(content):
     if len(strings) > 0:
         content = re.sub(string_regex, " __str__ ", content, 0)
 
-    content = content.lower()
-
     # handle identifier
     identifier_matches = re.finditer(identifier_regex, content)
     for matchNum, match in enumerate(identifier_matches):
         identifiers.append(match.group("identifier"))
     if len(identifiers) > 0:
         content = re.sub(identifier_regex, " __identifier__ ", content, 0)
+
+    content = content.lower()
 
     # FIXME & TODO initialize it only once
     element_type_state = {}
@@ -349,6 +349,10 @@ def parse_testcase_file(filepath):
             #print action
             if verified:
                 current_section["actions"].append(action)
+
+    # verify latest section
+    if current_section["title"] is not None:
+        testcase["sections"].append(current_section)
 
     # TODO: move write file part out of this method
     print testcase
