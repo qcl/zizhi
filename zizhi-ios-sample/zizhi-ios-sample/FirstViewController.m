@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = @"Zizhi iOS Sample🐵";
+    self.title = @"XingZhe Test 🐒";
 }
 
 - (void)didReceiveMemoryWarning {

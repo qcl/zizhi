@@ -2,7 +2,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'zizhi-ios-sample' do
-  #pod 'AFNetworking', '~> 2.6'
+  pod 'AFNetworking', '~> 2.6'
 
   # FIXME: there is issue about https://github.com/CocoaPods/CocoaPods/issues/4752
   #target 'zizhi-ios-sampleUITests' do

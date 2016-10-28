@@ -9,24 +9,18 @@
 #import <XCTest/XCTest.h>
 #import "Zizhi.h"
 
-#import "zizhi_ios_sampleUITestBase.h"
-
-@interface zizhi_ios_sampleUITests : zizhi_ios_sampleUITestBase
+@interface zizhi_ios_sampleUITests : XCTestCase
 
 @end
 
 @implementation zizhi_ios_sampleUITests
 
-- (void)setUp {
-    
-    NSLog(@"setup");
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-    
-    // In UI tests it is usually best to stop immediately when a failure occurs.
-    self.continueAfterFailure = NO;
-    
-    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+- (void)setUp
+{
     [super setUp];
+    self.continueAfterFailure = NO;
+    [[[XCUIApplication alloc] init] launch];
+    sleep(1);
 }
 
 - (void)tearDown {
@@ -35,86 +29,36 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
+// Pokemon Apprise
+- (void) test_Pokemon_Apprise {
     
-    XCUIApplication *app = [[XCUIApplication alloc] init];
-    [app.buttons[@"Hello"] tap];
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    XCTAssertNotNil(app.staticTexts[@"Hello world"]);
-}
-
-- (void) test_Test_Case_Name {
-    // Given something
-    ZZMatcher *zzm_1 = [[ZZMatcher alloc] initWithIdentifier:@"Some where"];
-    ZZMatcher *zzm_2 = [[ZZMatcher alloc] initWithIdentifier:@"Some button" elementType:XCUIElementTypeButton];
+    // Given pokemon view
+    ZZMatcher *zzm_1 = [[ZZMatcher alloc] initWithElementType:XCUIElementTypeTabBar];
+    ZZMatcher *zzm_2 = [[ZZMatcher alloc] initWithIdentifier:@"Banana" elementType:XCUIElementTypeButton];
     zzm_2.ancestor = zzm_1;
     XCUIElement *targetElement_1 = [Zizhi findElementByZizhiMatcher:zzm_2];
+    [self expectationForPredicate:[NSPredicate predicateWithFormat:@"exists == 1"] evaluatedWithObject:targetElement_1 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
     [targetElement_1 tap];
     
-    ZZMatcher *zzm_3 = [[ZZMatcher alloc] initWithIdentifier:@"Another where"];
-    ZZMatcher *zzm_4 = [[ZZMatcher alloc] initWithIdentifier:@"Some label"];
-    zzm_4.ancestor = zzm_3;
-    XCUIElement *targetElement_2 = [Zizhi findElementByZizhiMatcher:zzm_4];
-    XCTAssertNotNil(targetElement_2);
-    
-    // When doing some actions
-    ZZMatcher *zzm_5 = [[ZZMatcher alloc] initWithElementType:XCUIElementTypeNavigationBar];
-    ZZMatcher *zzm_6 = [[ZZMatcher alloc] initWithIdentifier:@"A" elementType:XCUIElementTypeButton];
-    zzm_6.ancestor = zzm_5;
-    XCUIElement *targetElement_3 = [Zizhi findElementByZizhiMatcher:zzm_6];
-    [targetElement_3 tap];
-    
-    ZZMatcher *zzm_7 = [[ZZMatcher alloc] initWithIdentifier:@"C" elementType:XCUIElementTypeCollectionView];
-    ZZMatcher *zzm_8 = [[ZZMatcher alloc] initWithIdentifier:@"b" elementType:XCUIElementTypeButton];
-    zzm_8.ancestor = zzm_7;
-    XCUIElement *targetElement_4 = [Zizhi findElementByZizhiMatcher:zzm_8];
-    [targetElement_4 tap];
-    
-    // Then something should happend
-    ZZMatcher *zzm_9 = [[ZZMatcher alloc] initWithIdentifier:@"some icons" elementType:XCUIElementTypeImage];
-    XCUIElement *targetElement_5 = [Zizhi findElementByZizhiMatcher:zzm_9];
-    XCTAssertNotNil(targetElement_5);
-    
-    
-}
-
-// TestCaseTitle
-- (void) test_TestCaseTitle {
-    // Given ...
-    ZZMatcher *zzm_1 = [[ZZMatcher alloc] initWithElementType:XCUIElementTypeNavigationBar];
-    ZZMatcher *zzm_2 = [[ZZMatcher alloc] initWithIdentifier:@"Menu" elementType:XCUIElementTypeButton];
-    zzm_2.ancestor = zzm_1;
-    XCUIElement *targetElement_1 = [Zizhi findElementByZizhiMatcher:zzm_2];
-    [targetElement_1 tap];
-    
-    // When ...
-    ZZMatcher *zzm_3 = [[ZZMatcher alloc] initWithIdentifier:@"APPRISE" elementType:XCUIElementTypeButton];
+    // When tap pokemon apprise
+    ZZMatcher *zzm_3 = [[ZZMatcher alloc] initWithIdentifier:@"menu" elementType:XCUIElementTypeButton];
     XCUIElement *targetElement_2 = [Zizhi findElementByZizhiMatcher:zzm_3];
+    [self expectationForPredicate:[NSPredicate predicateWithFormat:@"exists == 1"] evaluatedWithObject:targetElement_2 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
     [targetElement_2 tap];
     
-    // Then ...
-    ZZMatcher *zzm_4 = [[ZZMatcher alloc] initWithIdentifier:@"Your Anisatr is really strong"];
+    ZZMatcher *zzm_4 = [[ZZMatcher alloc] initWithIdentifier:@"apprise" elementType:XCUIElementTypeButton];
     XCUIElement *targetElement_3 = [Zizhi findElementByZizhiMatcher:zzm_4];
-    XCTAssertNotNil(targetElement_3);
+    [self expectationForPredicate:[NSPredicate predicateWithFormat:@"exists == 1"] evaluatedWithObject:targetElement_3 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [targetElement_3 tap];
     
-    
-}
-
-- (void)testExampleTwo {
-    // Use recording to get started writing UI tests.
-    
-    XCUIApplication *app = [[XCUIApplication alloc] init];
-    [app.buttons[@"Hello"] tap];
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-
-    ZZMatcher *zzm1 = [[ZZMatcher alloc] initWithElementType:XCUIElementTypeWindow];
-    ZZMatcher *zzm = [[ZZMatcher alloc] initWithIdentifier:@"Hello" elementType:XCUIElementTypeButton];
-    zzm.ancestor = zzm1;
-    XCUIElement *element = [Zizhi findElementByZizhiMatcher:zzm];
-    [element tap];
-//
-    XCTAssertNotNil(app.staticTexts[@"Hello world"]);
+    // Then show apprise
+    ZZMatcher *zzm_5 = [[ZZMatcher alloc] initWithIdentifier:@"Banana is delicious"];
+    XCUIElement *targetElement_4 = [Zizhi findElementByZizhiMatcher:zzm_5];
+    [self expectationForPredicate:[NSPredicate predicateWithFormat:@"exists == 1"] evaluatedWithObject:targetElement_4 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 @end
