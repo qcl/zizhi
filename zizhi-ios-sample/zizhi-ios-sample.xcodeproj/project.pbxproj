@@ -20,7 +20,6 @@
 		7CFEB0C21DAB271400C3692A /* HelloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0C01DAB271400C3692A /* HelloViewController.m */; };
 		7CFEB0C31DAB271400C3692A /* HelloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFEB0C11DAB271400C3692A /* HelloViewController.xib */; };
 		7CFEB0CB1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */; };
-		7CFEB0D31DAB459800C3692A /* zizhi_ios_sampleUITestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +56,6 @@
 		7CFEB0C81DAB35AD00C3692A /* zizhi-ios-sampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zizhi-ios-sampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zizhi_ios_sampleUITests.m; sourceTree = "<group>"; };
 		7CFEB0CC1DAB35AD00C3692A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zizhi_ios_sampleUITestBase.m; sourceTree = "<group>"; };
-		7CFEB0D41DAB48BA00C3692A /* zizhi_ios_sampleUITestBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zizhi_ios_sampleUITestBase.h; sourceTree = "<group>"; };
 		90D362F77F661029543D43B4 /* Pods_zizhi_ios_sampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zizhi_ios_sampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9464F4EA1BE753C013EA7D25 /* Pods-zizhi-ios-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zizhi-ios-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-zizhi-ios-sample/Pods-zizhi-ios-sample.release.xcconfig"; sourceTree = "<group>"; };
 		A6E4AD9C8525292678CA0325 /* Pods-zizhi-ios-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zizhi-ios-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zizhi-ios-sample/Pods-zizhi-ios-sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,8 +146,6 @@
 				7CE24FD41DB283C70010672F /* Zizhi */,
 				7CFEB0CA1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m */,
 				7CFEB0CC1DAB35AD00C3692A /* Info.plist */,
-				7CFEB0D21DAB459800C3692A /* zizhi_ios_sampleUITestBase.m */,
-				7CFEB0D41DAB48BA00C3692A /* zizhi_ios_sampleUITestBase.h */,
 			);
 			path = "zizhi-ios-sampleUITests";
 			sourceTree = "<group>";
@@ -340,7 +335,6 @@
 				7CE24FD91DB283EC0010672F /* Zizhi.m in Sources */,
 				7CFEB0CB1DAB35AD00C3692A /* zizhi_ios_sampleUITests.m in Sources */,
 				7CE24FDA1DB283EC0010672F /* ZZMatcher.m in Sources */,
-				7CFEB0D31DAB459800C3692A /* zizhi_ios_sampleUITestBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
