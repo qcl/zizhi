@@ -79,6 +79,28 @@
     
 }
 
+// TestCaseTitle
+- (void) test_TestCaseTitle {
+    // Given ...
+    ZZMatcher *zzm_1 = [[ZZMatcher alloc] initWithElementType:XCUIElementTypeNavigationBar];
+    ZZMatcher *zzm_2 = [[ZZMatcher alloc] initWithIdentifier:@"Menu" elementType:XCUIElementTypeButton];
+    zzm_2.ancestor = zzm_1;
+    XCUIElement *targetElement_1 = [Zizhi findElementByZizhiMatcher:zzm_2];
+    [targetElement_1 tap];
+    
+    // When ...
+    ZZMatcher *zzm_3 = [[ZZMatcher alloc] initWithIdentifier:@"APPRISE" elementType:XCUIElementTypeButton];
+    XCUIElement *targetElement_2 = [Zizhi findElementByZizhiMatcher:zzm_3];
+    [targetElement_2 tap];
+    
+    // Then ...
+    ZZMatcher *zzm_4 = [[ZZMatcher alloc] initWithIdentifier:@"Your Anisatr is really strong"];
+    XCUIElement *targetElement_3 = [Zizhi findElementByZizhiMatcher:zzm_4];
+    XCTAssertNotNil(targetElement_3);
+    
+    
+}
+
 - (void)testExampleTwo {
     // Use recording to get started writing UI tests.
     
