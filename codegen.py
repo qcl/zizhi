@@ -7,6 +7,8 @@ import argparse
 
 import zizhi
 
+defaultTimeout = 5
+
 # read testcase object from .zz file.  
 def read_testcase(testcase_filepath):
     f = open(testcase_filepath, 'r')
@@ -103,6 +105,13 @@ def gen_objc_testcode_action_tap(action, variables):
     #print match_lines
     lines.extend(match_lines)
 
+    #check element exists, try to wait it.
+    expectation_code = '[self expectationForPredicate:[NSPredicate predicateWithFormat:@"exists == 1"] evaluatedWithObject:%s handler:nil];' % (var_name)
+    wait_code = '[self waitForExpectationsWithTimeout:%d handler:nil];' % (defaultTimeout)
+
+    lines.append(expectation_code)
+    lines.append(wait_code)
+
     # tap it
     tap_code = '[%s tap];' % (var_name)
     lines.append(tap_code)
@@ -128,8 +137,14 @@ def gen_objc_testcode_action_verify(action,variables):
     lines.extend(match_lines)
 
     # varify it.
-    verify_code = 'XCTAssertNotNil(%s);' % (var_name)
-    lines.append(verify_code)
+    # verify_code = 'XCTAssert(%s.exists);' % (var_name)
+    # lines.append(verify_code)
+    expectation_code = '[self expectationForPredicate:[NSPredicate predicateWithFormat:@"exists == 1"] evaluatedWithObject:%s handler:nil];' % (var_name)
+    wait_code = '[self waitForExpectationsWithTimeout:%d handler:nil];' % (defaultTimeout)
+
+    lines.append(expectation_code)
+    lines.append(wait_code)
+
     #print verify_code
 
     return lines, var_name
@@ -211,7 +226,7 @@ def generate_testcase(testcase):
 
 
 def codegen(filepath):
-    print "Gen code from", filepath
+    print "//Gen code from", filepath
 
     # read a test case and generate code.
     testcase = read_testcase(filepath)
