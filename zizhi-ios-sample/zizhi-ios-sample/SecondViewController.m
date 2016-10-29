@@ -90,7 +90,7 @@ typedef NS_ENUM(NSUInteger, BananaViewState)
 
 - (IBAction)appriseButtonDidTap:(id)sender
 {
-    [self setState:BananaViewApprise];
+    //[self setState:BananaViewApprise];
 }
 
 - (IBAction)menuButtonDidTap:(id)sender

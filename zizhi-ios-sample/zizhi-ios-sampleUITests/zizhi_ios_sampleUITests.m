@@ -29,13 +29,9 @@
     
     XCUIApplication *app = [[XCUIApplication alloc] init];
     XCUIElement *btn = app.buttons[@"Hello"];
-    //[self expectationForPredicate:p evaluatedWithObject:btn handler:nil];
-    //[self waitForExpectationsWithTimeout:15 handler:nil];
-    
     [btn tap];
-    
+
     XCUIElement *element = app.staticTexts[@"Hello world"];
-    
     [self expectationForPredicate:p evaluatedWithObject:element handler:nil];
     [self waitForExpectationsWithTimeout:15 handler:nil];
 }
